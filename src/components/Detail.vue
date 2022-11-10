@@ -4,6 +4,7 @@
     <h4>{{ roomsData[$route.params.id].title }}</h4>
     <p>{{ roomsData[$route.params.id].content }}</p>
     <p>{{ roomsData[$route.params.id].date }}</p>
+    <router-view> </router-view>
   </div>
 </template>
 

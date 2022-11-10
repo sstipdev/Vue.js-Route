@@ -1,8 +1,6 @@
 <template>
   <div v-for="(data, i) in roomsData" :key="i">
-    <router-link to="/detail/">
-      <h5 @click="check = data.number">{{ data.title }}</h5>
-    </router-link>
+    <h5 @click="$router.push('/detail/' + data.number)">{{ data.title }}</h5>
     <p>{{ data.content }}</p>
     <p>{{ data.date }}</p>
   </div>
