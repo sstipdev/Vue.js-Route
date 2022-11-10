@@ -15,24 +15,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <router-link class="nav-link" to="/">홈</router-link>
+          <router-link class="nav-link" to="/list">리스트</router-link>
         </div>
       </div>
     </div>
   </nav>
-
-  <div class="container mt-4">
-    <h5>프론트엔드 개발자 블로그임</h5>
-    <p>Vue.js로 제작됨</p>
-  </div>
-  <List v-for="(data, i) in blogsData" :key="i" :data="data" />
+  <router-view :roomsData="blogsData"> </router-view>
 </template>
 
 <script>
-import List from "./components/List.vue";
 import blogsData from "./data/blogsData.js";
 
 export default {
@@ -42,9 +34,7 @@ export default {
       blogsData,
     };
   },
-  components: {
-    List,
-  },
+  components: {},
 };
 </script>
 
